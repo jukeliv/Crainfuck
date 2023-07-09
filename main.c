@@ -65,12 +65,12 @@ int main(int argc, char* argv[])
             break;
             case '+':
             {
-                *ptr+=1;
+                *ptr++;
             }
             break;
             case '-':
             {
-                *ptr-=1;
+                *ptr--;
             }
             break;
             case '.':
@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
             break;
             case '[':
             {
-                if(!(*ptr))
+                if(!*ptr)
                 {
                     for(;source[i] != ']'; ++i);
                 }
@@ -100,10 +100,13 @@ int main(int argc, char* argv[])
             }
             break;
             default:
-                // This are just comments lol
+                // These are just comments lol
             break;
         }
     }
+
+    free(mem);
+    free(ptr);
 
     return 0;
 }
